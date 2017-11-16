@@ -1,0 +1,9 @@
+C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\bin\Debug\Snake Game.exe
+C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\bin\Debug\Snake Game.pdb
+C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\obj\x86\Debug\Snake_Game.Form1.resources
+C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\obj\x86\Debug\Snake_Game.Properties.Resources.resources
+C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\obj\x86\Debug\Snake Game.csproj.GenerateResource.Cache
+C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\obj\x86\Debug\Snake Game.exe
+C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\obj\x86\Debug\Snake Game.pdb
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake Game.exe
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake Game.pdb
