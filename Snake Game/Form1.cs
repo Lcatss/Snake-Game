@@ -12,12 +12,15 @@ namespace Snake_Game
     public partial class Form1 : Form
     {
         private Game game;
+        private AI ai;
         public Form1()
         {
             InitializeComponent();
-            this.ClientSize = new Size(900, 600);
+            this.ClientSize = new Size(450, 450);
             game = new Game(ClientRectangle);
             BackColor = Color.Black;
+
+            ai = new AI(game);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -31,6 +34,7 @@ namespace Snake_Game
             {
                 timer1.Stop();
                 MessageBox.Show("You Died!\r\nYour Score:" + game.Score.ToString(), "Game Over!");
+                Application.Exit();
             }
         }
 
@@ -83,7 +87,26 @@ namespace Snake_Game
             {
                 timer1.Stop();
                 MessageBox.Show("You Died!\r\nYour Score:" + game.Score.ToString(), "Game Over!");
+                Application.Exit();
             }
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            ai.Move();
+            if (!game.GameOver)
+            {
+                this.Invalidate();
+            }
+            else
+            {
+                timer2.Stop();
+                MessageBox.Show("You Died!\r\nYour Score:" + game.Score.ToString(), "Game Over!");
+                Application.Exit();
+            }
+            label1.Text = game.Score.ToString();
+        }
+
+
     }
 }

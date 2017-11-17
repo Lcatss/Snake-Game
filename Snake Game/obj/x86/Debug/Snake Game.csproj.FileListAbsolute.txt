@@ -7,3 +7,9 @@ C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\obj\x86\Debug\Snake G
 C:\Users\born9\AppData\Local\Temporary Projects\Snake Game\obj\x86\Debug\Snake Game.pdb
 D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake Game.exe
 D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake Game.pdb
+D:\z\技术\电脑\C#\Snake Game\Snake Game\bin\Debug\Snake Game.exe
+D:\z\技术\电脑\C#\Snake Game\Snake Game\bin\Debug\Snake Game.pdb
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake_Game.Form1.resources
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake_Game.Properties.Resources.resources
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake Game.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Debug\Snake Game.csprojResolveAssemblyReference.cache

@@ -62,10 +62,10 @@ namespace Snake_Game
 
         public void Draw(Graphics g)
         {
-            g.FillEllipse(Brushes.Green,Body[0].X, Body[0].Y, bodyLength, bodyLength);
+            g.FillRectangle(Brushes.Green,Body[0].X+2, Body[0].Y+2, bodyLength-4, bodyLength-4);
             for (int i = 1; i < Body.Count; i++)
             {
-                g.FillEllipse(Brushes.Yellow, Body[i].X, Body[i].Y, bodyLength, bodyLength);
+                g.FillRectangle(Brushes.Yellow, Body[i].X+2, Body[i].Y+2, bodyLength-4, bodyLength-4);
             }
         }
     }

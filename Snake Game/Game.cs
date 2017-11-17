@@ -8,13 +8,15 @@ namespace Snake_Game
 {
     class Game
     {
-        private const int Length = 30;
+        private const int length = 30;
+        public int Length { get { return length; } }
         
         private int row;
         private int col;
-        private Snake snake;
-        private Point food;
+        public Snake snake { get;private set; }
+        public Point food { get;private set; } 
         private Rectangle rect;
+        public Rectangle Rect { get { return rect; } }
         public Direction currentDirection { get;private set; }
         public bool GameOver;
         public int Score { get { return snake.Body.Count - 5; } }
@@ -51,7 +53,9 @@ namespace Snake_Game
                     break;
                 default: break;
             }
-            return new Point(location.X + xIncrease, location.Y + yIncrease);
+            int newX = location.X + xIncrease;
+            int newY = location.Y + yIncrease;
+            return new Point(newX, newY);
         }
 
         public void Draw(Graphics g)
@@ -92,41 +96,22 @@ namespace Snake_Game
 
         public void Move()
         {
-            if (Safe(currentDirection))
-                if (HasFood(currentDirection))
-                {
-                    List<Point> empty=new List<Point>();
-                    for(int i=0;i<col;i++)
-                        for(int j=0;j<row;j++)
-                        {
-                            Point here=new Point(i*Length,j*Length);
-                            bool emptyHere=true;
-                            foreach(Point body in snake.Body)
-                                if(here==body)
-                                {
-                                    emptyHere=false;
-                                    break;
-                                }
-                            if(emptyHere)
-                                empty.Add(here);
-                        }
-                    food=empty[random.Next(empty.Count)];
-                    snake.Move(currentDirection, true);
-                }
-                else
-                    snake.Move(currentDirection, false);
-            else
-                GameOver=true;
+            Move(currentDirection);
         }
 
-        private bool Safe(Direction direction)
+        public bool Safe(Direction direction)
         {
-            Point target = DirectionLocation(snake.Body[0],direction,Length);
-            for (int i = 0; i < snake.Body.Count-1; i++)
-                if (target == snake.Body[i])
+            return Safe(snake.Body[0], direction, rect, length, snake.Body);
+        }
+
+        public static bool Safe(Point location, Direction direction, Rectangle rect, int length, List<Point> snakeBody)
+        {
+            Point target = DirectionLocation(location, direction, length);
+            for (int i = 0; i < snakeBody.Count - 1; i++)
+                if (target == snakeBody[i])
                     return false;
-                
-            if (target.X < 0 || target.Y < 0 || target.Y > rect.Height - Length || target.X > rect.Width - Length)
+
+            if (target.X < 0 || target.Y < 0 || target.Y > rect.Height - length || target.X > rect.Width - length)
                 return false;
             return true;
         }
