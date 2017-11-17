@@ -16,7 +16,7 @@ namespace Snake_Game
         public Form1()
         {
             InitializeComponent();
-            this.ClientSize = new Size(450, 450);
+            this.ClientSize = new Size(150, 150);
             game = new Game(ClientRectangle);
             BackColor = Color.Black;
 

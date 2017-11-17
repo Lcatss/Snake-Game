@@ -60,8 +60,9 @@ namespace Snake_Game
 
         public void Draw(Graphics g)
         {
-            g.FillRectangle(Brushes.Blue, food.X + 5, food.Y + 5, Length - 10, Length - 10);
             snake.Draw(g);
+            g.FillRectangle(Brushes.Blue, food.X + 5, food.Y + 5, Length - 10, Length - 10);
+            
         }
 
         public void Move(Direction direction)
