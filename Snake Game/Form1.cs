@@ -42,6 +42,7 @@ namespace Snake_Game
         {
             Graphics g=e.Graphics;
             game.Draw(g);
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -106,6 +107,8 @@ namespace Snake_Game
             }
             label1.Text = game.Score.ToString();
         }
+
+
 
 
     }

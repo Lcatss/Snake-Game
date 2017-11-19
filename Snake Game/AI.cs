@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Snake_Game
 {
@@ -87,31 +88,29 @@ namespace Snake_Game
 
         private bool FindTail(Direction direction)//看从目标方向能否找到尾巴
         {
-            Point target = Game.DirectionLocation(game.snake.Body[0], direction, game.Length);
-            List<Point> Checked = new List<Point>();
-            Stack<Point> ToChecked = new Stack<Point>();
             
-
-            ToChecked.Push(target);
-            while(ToChecked.Count>0)
+            //target 是蛇头向目标方向移动的第一个点
+            Point target = Game.DirectionLocation(game.snake.Body[0], direction, game.Length);
+            //检查过的点
+            List<Point> Checked = new List<Point>();
+            //待检查的点
+            Queue<Point> ToChecked = new Queue<Point>();
+            ToChecked.Enqueue(target);
+            while(ToChecked.Count>0)//队列中还有点时
             {
-                target = ToChecked.Pop();
+                target = ToChecked.Dequeue();//出队
                 Checked.Add(target);
-                if (target == game.snake.Body[game.snake.Body.Count-1])
+                if (target == game.snake.Body[game.snake.Body.Count - 1])//如果检查点就是蛇尾，返回true
                     return true;
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 4; i++)//否则，检查四个方向，如果有没检查过的安全点，则加入队列
                     if (Game.Safe(target, (Direction)i, game.Rect, game.Length, game.snake.Body))
                     {
                         Point newTarget = Game.DirectionLocation(target, (Direction)i, game.Length);
-                        if (!Checked.Contains(newTarget))
-                            ToChecked.Push(newTarget);
+                        if(!Checked.Contains(newTarget)&&!ToChecked.Contains(newTarget))
+                            ToChecked.Enqueue(newTarget);
                     }
             }
-
             return false;
-
         }
-
-
     }
 }

@@ -1,0 +1,7 @@
+D:\z\技术\电脑\C#\Snake Game\Snake Game\bin\Release\Snake Game.exe
+D:\z\技术\电脑\C#\Snake Game\Snake Game\bin\Release\Snake Game.pdb
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Release\Snake_Game.Form1.resources
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Release\Snake_Game.Properties.Resources.resources
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Release\Snake Game.csproj.GenerateResource.Cache
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Release\Snake Game.exe
+D:\z\技术\电脑\C#\Snake Game\Snake Game\obj\x86\Release\Snake Game.pdb
